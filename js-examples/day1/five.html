@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Arrays, Objects and For Loops</h2>
+    <script>
+        function arrayDemo() {
+            var names = ["Virat", "Rohit", "Ravi"];
+            document.write("<h3>Item at 1st index: "+names[1]+"</h3>");
+            // for loop can iterate all the elements: for(variable; condition; expression)
+            for(var i = 0; i < names.length; i++) { // length is an inbuilt property in array
+                document.write('<h3>Index: '+i+', Name = '+names[i]+'</h3>');
+            }
+            document.write("<h3>For of in array</h3>");
+            for(var i of names) {
+                document.write('<h3>Name='+i+'</h3>');
+            }
+            document.write('----------------------------------------')
+        }
+        function objectDemo() {
+            var user = {userId:123, name: "Virat", age: 38};
+            document.write("<h3>Object uses For In</h3>");
+            document.write("<h3>");
+            for(var u in user) {
+                document.write(u+"="+user[u]+"<br />")
+            }
+            document.write("</h3>");
+            document.write("____________________________________________--")
+            // document.write('<h3>Id='+user.userId+', Name='+user.name+', Age='+user.age+'</h3>');
+            // // you can pass property and access object value i.e., object["property"]
+            // document.write('<h4>Name='+user["name"]+',Age='+user["age"]+'</h4>');
+        }
+        arrayDemo();
+        objectDemo();
+    </script>
+</body>
+</html>

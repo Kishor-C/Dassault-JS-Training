@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Inbuilt functions of Javascript objects</h2>
+    <script>
+        // window.alert('creates an alert box');
+        // alert('creates another alert box');
+        // var status = confirm('creates a yes or no message box');
+        // alert('Status of confirm: '+status);
+        // prompt is another message box that asks user an input
+        // prompt returns string
+        var input1 = parseInt(window.prompt("Enter an input"));
+        var input2 = parseInt(prompt("Enter another input"));
+        if(!isNaN(input1) && !isNaN(input2)) { // isNaN function to check for NaN
+            document.write("<h2>"+(input1+input2)+"</h2>");
+        }
+        // typeof is used to check the type of value a variable stores
+        var x = "hello";
+        document.write('<h2>Typeof x: '+typeof(x)+"</h2>");
+        var y = 25;
+        document.write('<h2>Typeof y: '+typeof(y)+"</h2>");
+        document.write("<h2>Typeof input1: "+typeof(input1)+"</h2>");
+    </script>
+</body>
+</html>

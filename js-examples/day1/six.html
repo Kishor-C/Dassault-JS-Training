@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "d1">
+        Hello Everyone!
+    </div>
+    <button id = "btn2" >Another Click</button>
+    <button id = "btn" onclick="handleClick()">Click</button>
+    <p id = "p1" onclick="handleClick()">Paragraph to click</p>
+    <script>
+        var counter = 0;
+        var divEle = document.querySelector("#d1");
+        var btn2 = document.querySelector("#btn2");
+        // adding event handler to the button
+        btn2.addEventListener("click", function(){
+            counter++;
+            divEle.innerHTML = 'You clicked '+counter+' time(s)'
+        });
+        // adding same click event handler to the button
+        btn2.addEventListener("click", function(){
+           divEle.style.color = 'green'; // <div id="d1" style=color:green>
+        });
+        btn2.addEventListener("mouseover", handleClick);// don't use () for handleClick() 
+        function handleClick() {
+            counter++;
+            divEle.innerHTML = 'Hello Everyone! you have clicked '+counter+' time(s)';
+        }
+    </script>
+</body>
+</html>

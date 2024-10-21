@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .applyBorders {
+            border: 2px solid black;
+            padding: 30px;
+            text-align: center;
+        }
+        .applyBG {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="applyBorders" id = "d1">
+        HELLO DIV
+        <p class="applyBorders applyBG">HELLO P</p>
+        <p class="applyBorders applyBG">HELLO P</p>
+    </div>
+    <div id = "d2"></div>
+    <div id = "d3"></div>
+    <script>
+        var divEle = document.querySelector("#d1");
+        var divEle2 = document.querySelector("#d2");
+        var divEle3 = document.querySelector("#d3");
+        var counter1 = 0;
+        var counter2 = 0;
+        divEle.addEventListener("mouseenter", function(){
+            counter1++;
+            divEle2.innerHTML = '<h4>Mouse entered: '+counter1+' time(s)</h4>'
+        });
+        
+        divEle.addEventListener("mouseover", function(){
+            counter2++;
+            divEle3.innerHTML = '<h4>Mouse over: '+counter2+' time(s)</h4>'
+        })
+    </script>
+</body>
+</html>

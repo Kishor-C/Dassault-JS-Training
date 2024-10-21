@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Form Validation Example</h2>
+    <form action = "#" method = "post" onsubmit="return validate()">
+        <div>
+            <label>Enter username<input type = "text" name = "un"></label><span id = "unErr"></span>
+        </div>
+        <div><label>Select Gender</label>
+            <label><input type = "radio" name = "gen" value="M">Male</label>
+            <label><input type = "radio" name = "gen" value="F">FeMale</label><span id = "genErr"></span>
+        </div>
+        <input type = "submit" value = "Register">
+    </form>
+    <script>
+        function validate() {
+            let form = document.forms[0]; // will access the 1st form tag
+            let user = form.un; // will access the <input name="un">
+            let gender = form.gen; // will access the <input name="gen">
+            let unErr = document.querySelector("#unErr");
+            let genErr = document.querySelector("#genErr");
+            if(user.value.length == 0) {
+                alert("Username cannot be empty");
+                unErr.style.color = 'red';
+                unErr.innerHTML = '<i>Username is empty</i>'
+                user.focus(); // will focus the cursor in the <input name="un">
+                return false;
+            }
+            if(gender.value.length == 0) { // true if none of the radio button is selected
+                genErr.style.color = 'red';
+                genErr.innerHTML = '<i>Gender must be selected</i>'
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

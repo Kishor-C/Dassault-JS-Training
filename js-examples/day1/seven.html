@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id = "d1">
+    <h1>Some content1</h1>
+    <h2>Some content3</h2>
+    <h3>Some content4</h3>
+    <h4>Some content5</h4>
+    <p>Some content6</p>
+    <i>Some content7</i>
+   </div>
+   <script>
+    var ele = document.querySelector("#d1");
+   
+    ele.addEventListener("click", function(ev) {
+        //alert(ev.target.tagName);
+        var tag = ev.target;
+        tag.style.color = 'green';
+    });
+   
+   </script>
+</body>
+</html>
