@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type = "text/javascript" src = "myscript.js"></script>
+    <!-- don't write the internal script in the same script tag that imports the js file-->
+     <script type = "text/javascript">
+        let p1 = new Person('Virat', 35);
+        let e1 = new Employee(1234, 'Rohit', 36, 40000);
+        document.write(`<h3>${p1.display()}</h3>`);
+        document.write(`<h3>${e1.display()}</h3>`);
+        // re-define the display in Employee class to return id, name, age & salary
+
+     </script>
+</body>
+</html>

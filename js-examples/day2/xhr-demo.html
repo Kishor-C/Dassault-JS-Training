@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>XMLHttpRequest Example</h2>
+    <div>
+        <input type = "number" id = "userId" placeholder="Enter id 1 to 10"><br />
+        <button id = "btn1">Fetch User</button>
+    </div>
+    <div id = "content"></div>
+    <script type="text/javascript">
+        let xhr = new XMLHttpRequest();
+        let btn1 = document.querySelector("#btn1");
+        btn1.addEventListener("click", function(){
+            let id = document.querySelector("#userId").value;
+            let url = `https://jsonplaceholder.typicode.com/users/${id}`;
+            xhr.open("get", url, true);//request init
+            xhr.send(); //request sent
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState == 4) {
+                    let userJSON = xhr.responseText; // read response body
+                    let userJS = JSON.parse(userJSON);// converts JSON to JS
+                    let ele = document.querySelector("#content");
+                    if(xhr.status == 200) {
+                        // ele.innerHTML = "<h3 style='color:green'>Hello "+userJS.name+
+                        // ",Your email = "+userJS.email+
+                        // "street = "+userJS.address.street+"</h3>";
+                        ele.innerHTML = `<h3 style="color:green">Hello ${userJS.name}, 
+                            Your email = ${userJS.email}, Street=${userJS.address.street}</h3>`
+                    }
+                    if(xhr.status == 404) {
+                        //ele.innerHTML = "<h3 style='color:red'>User with an id "+id+" not found</h3>";
+                        ele.innerHTML = `<h3 style="color:red">User with an id ${id} not found</h3>`
+                    }
+                }   
+            }
+        });
+    </script>
+</body>
+</html>

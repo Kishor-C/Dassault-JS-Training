@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Promise takes a callback function with 2 parameters
+        // these 2 parameters are resovle & reject functions which gives the data
+        async function demo() {
+            let pr = new Promise((resolve, reject)=>{
+            // usually an asynchronous tasks are written here
+            if(Math.random() > 0.5) {
+                // assuming resolved
+                resolve({status: 200, data1: "Hello Everyone"});
+            } else {
+                // assuming rejected
+                reject({status:404, data2: "Sorry no result"})
+            }
+         });
+         try {
+            let r = await pr;
+            console.log('resolved promise');
+            console.log(r);
+         } catch(err) {
+            console.log('rejected promise');
+            console.log(err);
+         }
+        }
+        demo();
+        // promise gives you a better syntax to handle success & error using then&catch
+        // pr.then((value)=>document.write(`<h2>${value.status} and ${value.data}</h2>`))
+        // .catch((value)=>document.write(`<h2>${value.status} and ${value.data}</h2>`));
+    </script>
+</body>
+</html>

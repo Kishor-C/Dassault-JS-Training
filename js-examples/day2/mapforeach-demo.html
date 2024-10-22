@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Map and For Each Demo</h2>
+    <script>
+        let price = [100, 500, 200, 400, 300];
+        price.forEach(function(v, i){
+            document.write(`<p>${v} at ${i}</p>`);
+        });
+        // arrow function for above callback
+        price.forEach((v, i)=>document.write(`<p>ArrowFn ${v} at ${i}</p>`));
+        document.write("--------------------------------------");
+        let priceAfterDiscount = price.map(function(v, i){
+            document.write(`<p>value iterated in map ${v}</p>`);
+            return v * 0.9; // v - (v * 0.1);
+        });
+        // arrow function for 2 lines in the map
+        priceAfterDiscount = price.map((v, i)=>{
+            document.write(`<p>value iterated in arrow in map ${v}</p>`);
+            return v * 0.9; // v - (v * 0.1);
+        });
+        document.write("-----------------forEach with arrow---------------------");
+        priceAfterDiscount.forEach((v, i)=>document.write(`<p>value after discount ${v}</p>`));
+        document.write('--------------sorting an array----------');
+        priceAfterDiscount.sort(function(x, y){
+            return y - x; // sort takes a comparable function that must return +ve or 0 or -ve
+        });
+        // arrow function for sort, this time no need of return keyword as its one line
+        priceAfterDiscount.sort((x, y)=>x - y); //with {} priceAfterDiscount.sort((x, y) => {return x - y;})
+        priceAfterDiscount.forEach((v, i)=>document.write(`<p>value after sort ${v}</p>`));
+    </script>
+</body>
+</html>

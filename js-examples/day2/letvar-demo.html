@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = 20;
+        var x = 35; // var allows re-declaration
+        console.log(`x=${x}`);
+        let y = 44;
+        //let y  44; you can see the error in the console
+        if(x >= 20) {
+            var z = 100;
+            let a = 50;
+        }
+        console.log(`z=${z}`); // z is declared inside if, but still you can access
+        console.log(`a=${a}`); // throws an error
+    </script>
+</body>
+</html>

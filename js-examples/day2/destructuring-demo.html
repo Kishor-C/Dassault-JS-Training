@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // object destructuring
+        let e = {id : 102, name : "Virat", address : {state:"KA", city:"BLR"}};
+        let e2 = {id : 103, name : "Raj", address : {state:"KA", city:"MYS"}};
+        print(e);
+        print(e2);
+        function print(obj) {
+            let {id, name, address} = obj; // destructure:id,name,address
+            let {state, city} = address; // destructure: state, city
+            document.write(`<h2>Id=${id},Name=${name},State=${state},City=${city}</h2>`)
+        }
+        // array destructuring
+        let items = [20, 15];
+        let [x, y, z] = items; // array destructure
+        document.write(`<h2>x=${x},y=${y},z=${z}</h2>`);
+    </script>
+</body>
+</html>

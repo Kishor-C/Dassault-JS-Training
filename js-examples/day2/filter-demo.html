@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Filter items</h2>
+    <script>
+        let foodItems = [
+        {name: "Pepper Chicken", type: "Non-Veg", price: 350},
+        {name: "Panneer Biryani", type: "Veg", price: 200},
+        {name: "Dal Kichdi", type: "Veg", price: 250},
+        {name: "Crispy Chicken", type: "Non-Veg", price: 550}
+        ];
+        let vegItems = foodItems.filter((item)=>item.type=='Veg');
+        let nonVegItems = foodItems.filter((item)=>item.type=='Non-Veg');
+        document.write("<h3>Veg Items:-</h3>");
+        vegItems.forEach((item, index)=>document.write(`<p>${item.name}, Rs. ${item.price}</p>`));
+        
+        document.write("<h3>Non Veg Items:-</h3>");
+        nonVegItems.forEach((item, index)=>document.write(`<p>${item.name}, Rs. ${item.price}</p>`));
+    </script>
+</body>
+</html>

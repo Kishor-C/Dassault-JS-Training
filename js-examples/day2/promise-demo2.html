@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "content"></div>
+    <script>
+        let divEle = document.querySelector("#content");
+        function fetchById() {
+            let id = 25;
+            let url = "https://jsonplaceholder.typicode.com/"+id;
+            fetch(url)
+            .then(value=>value.json())
+            .then(value=>console.log(value))
+            .catch(err=>console.log('catch'))
+        }
+        async function fetchById2() {
+            let id = 2;
+            let url = "https://jsonplaceholder.typicode.com/users/"+id;
+            let result1 = await fetch(url); // if(result1.hasOwnProperty(x))
+            let result2 = await result1.json();
+            divEle.innerHTML = `<h3>Hello ${result2.name}</h3>`
+        }
+        fetchById2();
+        
+    </script>
+</body>
+</html>

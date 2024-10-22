@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let users = [
+        {id : 200, name : "Raj", address : {state:"KA", city : "BLR", geo: {x:"10", y:"20"}}},
+        {id : 201, name : "Vijay"},
+        {id : 202, name : "Ajay", address : {state:"KA", city : "MYS"}}
+        ];
+        users.forEach((value, index) =>{
+            let {id, name, address} = value;
+            document.write(`<h2>Id=${id}, Name=${name}, State=${address?.state}, 
+                City=${address?.city}, Long=${address?.geo?.x}, Lat=${address?.geo?.y}</h2>`);
+        });
+        let x = {id : 20, name : "Raj"};
+        let age2 = x.age ?? 18; // if age is present assign its value else assign 18
+        document.write(`<h2>Age=${age2}, x.age = ${x.age}</h2>`);
+        let pad1 = "999888".padStart(10, '*'); // 10 is the length of the string
+        let pad2 = "856788".padStart(6, "0"); //since its length is already 6 it doesn't pad
+        let pad3 = "8762".padStart(6, "0"); // adds 0 at the beginning
+        let random = Math.ceil(Math.random() * 1000000); // ceil will round up the value
+        document.write(`<h3>Random=${random}, pad1=${pad1}, pad2=${pad2}, pad3=${pad3}</h3>`);
+        let otp6 = Number(random).toString().padStart(6, '0');
+        document.write(`<h3>Otp 6 digit = ${otp6}</h3>`);
+    </script>
+</body>
+</html>
